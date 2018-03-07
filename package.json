@@ -2,7 +2,7 @@
   "name": "voting",
   "version": "1.0.0",
   "description": "A voting machine that uses the blockchain to verify integrity and detect tampering",
-  "main": "index.js",
+  "main": "lib/ovserver.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
