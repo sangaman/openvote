@@ -4,7 +4,8 @@
   "description": "A voting machine that uses the blockchain to verify integrity and detect tampering",
   "main": "lib/ovserver.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node lib/ovserver.js"
   },
   "author": "",
   "license": "MIT",
