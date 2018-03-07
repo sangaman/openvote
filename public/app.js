@@ -1,9 +1,21 @@
 function listSnapshots() {
-  $.get('/snapshotlist', (response) => {
+  $.get('/snapshotlist', (snapshotList) => {
     let snapshotListHtml = '<ol>';
-    $.each(response.snapshotList, (index, obj) => {
+    $.each(snapshotList, (index, obj) => {
       snapshotListHtml += '<li>';
-      snapshotListHtml += obj.fileName;
+      snapshotListHtml += obj.filename;
+      snapshotListHtml += '</li>';
+    });
+    $('#snapshot-list').html(snapshotListHtml);
+  });
+}
+
+function verifySnapshots() {
+  $.get('/verifysnapshots', (snapshotList) => {
+    let snapshotListHtml = '<ol>';
+    $.each(snapshotList, (index, obj) => {
+      snapshotListHtml += '<li>';
+      snapshotListHtml += obj.filename;
       snapshotListHtml += ' - ';
       snapshotListHtml += JSON.stringify(obj.verificationEpoch);
       snapshotListHtml += '</li>';
@@ -12,16 +24,5 @@ function listSnapshots() {
   });
 }
 
-function verifySnapshots() {
-  $.get('/verifysnapshots', (response) => {
-    let snapshotListHtml = '<ol>';
-    $.each(response.snapshotList, (index, obj) => {
-      snapshotListHtml += '<li>';
-      snapshotListHtml += obj.fileName;
-      snapshotListHtml += '</li>';
-    });
-    $('#snapshot-list').html(snapshotListHtml);
-  });
-}
-
-listSnapshots();
+// listSnapshots();
+verifySnapshots();
