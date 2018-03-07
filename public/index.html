@@ -4,10 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <title>OpenVote</title>
+  <link rel="stylesheet" href="bulma.css" />
 </head>
 <body>
-    <h1>OpenVote</h1>
-    <div id="snapshot-list"></div>
+    <div class="columns">
+      <div class="is-centered"><figure class="image"><img src="OpenVotePS_small.png"></figure></div>
+    </div>
+    <section class="section">
+      <div class="columns">
+          <a class="button is-primary" id="verify">Verify</a>
+      </div>
+      <div class="columns">
+          <table key="table" v-if="!showInvoice" class="table is-hoverable">
+              <thead>
+                <tr>
+                  <th>Snapshot Time</th>
+                  <th>Vote Count</th>
+                  <th>Hash</th>
+                  <th>Verification</th>
+                </tr>
+              </thead>
+              <tbody id="snapshots">
+              </tbody>
+            </table>
+      </div>
+    </section>
     
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="app.js"></script>
