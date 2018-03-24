@@ -1,5 +1,7 @@
 # Open Vote
 
+[Third Place at the 2018 DC Blockchain Code-A-Thon](https://digitalchamber.org/code-a-thon-2018/)
+
 A MVP prototype electronic voting machine that implements proof-of-database using OpenTimestamps to detect vote tampering. At chosen intervals during voting, i.e. every 10 minutes, a snapshot of the database tracking voting results is stored to a file and the hash of the file is committed to the bitcoin blockchain using the OpenTimestamps API. After polls close, the voting results, database snapshots, and hashes are released to the public. Individuals can verify that each snapshot matches its corresponding hash and that the hash was indeed committed to the blockchain when it was supposed to. Any discrepancies indicate tampering.
 
 The current demo functionality includes a command line tool to simulate voter registration, voting, and intermittent snapshots and timestamping. It also includes a basic web interface that lists snapshots and indicates whether they can be verified by OpenTimestamps.
